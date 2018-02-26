@@ -1,0 +1,28 @@
+<svg width="89" height="86" xmlns="http://www.w3.org/2000/svg">
+
+ <g>
+  <title>background</title>
+  <rect fill="none" id="canvas_background" height="88" width="91" y="-1" x="-1"/>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <g id="svg_1">
+   <path id="svg_2" d="m84.069055,83.670286l-81,0c-0.3,0 -0.5,-0.2 -0.5,-0.5l0,-80c0,-0.3 0.2,-0.5 0.5,-0.5s0.5,0.2 0.5,0.5l0,79.5l80.5,0c0.3,0 0.5,0.2 0.5,0.5s-0.2,0.5 -0.5,0.5z"/>
+  </g>
+  <g id="svg_3">
+   <path id="svg_4" d="m79.869055,38.970286l-73.7,0c-0.3,0 -0.5,-0.2 -0.5,-0.5s0.2,-0.5 0.5,-0.5l73.7,0c0.3,0 0.5,0.2 0.5,0.5s-0.3,0.5 -0.5,0.5z"/>
+  </g>
+  <g stroke="null" id="svg_10">
+   <path stroke="null" id="svg_9" d="m83.90958,82.670783l-79.848132,0c-0.295734,0 -0.49289,-0.197532 -0.49289,-0.49383l0,-79.012833c0,-0.296298 0.197156,-0.49383 0.49289,-0.49383s0.49289,0.197532 0.49289,0.49383l0,78.519002l79.355242,0c0.295734,0 0.49289,0.197532 0.49289,0.49383s-0.197156,0.49383 -0.49289,0.49383z"/>
+  </g>
+  <line stroke="#000" stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_13" y2="83.678376" x2="83.990564" y1="81.678596" x1="83.990564" stroke-width="1.5" fill="none"/>
+  <line stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_14" y2="82.990951" x2="3.624378" y1="81.928568" x1="3.624378" fill-opacity="null" stroke-opacity="null" stroke-width="1.5" stroke="#000" fill="none"/>
+  <line stroke="#000" stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_15" y2="2.937232" x2="4.561776" y1="2.937232" x1="2.561995" fill-opacity="null" stroke-opacity="null" stroke-width="1.5" fill="none"/>
+  <g id="svg_17">
+   <path id="svg_16" d="m79.869053,38.345358l-73.7,0c-0.3,0 -0.5,-0.2 -0.5,-0.5s0.2,-0.5 0.5,-0.5l73.7,0c0.3,0 0.5,0.2 0.5,0.5s-0.3,0.5 -0.5,0.5z"/>
+  </g>
+  <line stroke="#000" stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_21" y2="38.933284" x2="6.43657" y1="37.370955" x1="6.43657" fill-opacity="null" stroke-opacity="null" stroke-width="1.5" fill="none"/>
+  <line stroke="#000" stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_23" y2="38.995777" x2="79.803523" y1="37.308462" x1="79.803523" fill-opacity="null" stroke-opacity="null" stroke-width="1.5" fill="none"/>
+  <text xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="14" id="svg_24" y="38.000005" x="47.3751" fill-opacity="null" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#000000">const</text>
+ </g>
+</svg>
