@@ -16,15 +16,15 @@ Firstly, you need to get HP Connectivity Kit. In the Calculators window find you
 
 Click on Toolbox menu button on the keyboard (the black one) and find User button
 
-<img src="https://cdn.rawgit.com/krlc/Constants/fa32e63e/readme/functions.png" width="300" alt="Functions" align="middle">
+<img src="https://raw.githubusercontent.com/krlc/Constants/master/readme/functions.png" width="300" alt="Functions" align="middle">
 
 After choose Constants
 
-<img src="https://cdn.rawgit.com/krlc/Constants/fa32e63e/readme/constants.png" width="300" alt="Functions" align="middle">
+<img src="https://raw.githubusercontent.com/krlc/Constants/master/readme/constants.png" width="300" alt="Functions" align="middle">
 
 After selecting the required constant, press Enter button on the keyboard. The variable will appear in the input field. For example you can multiply it by 1/2:
 
-<img src="https://cdn.rawgit.com/krlc/Constants/fa32e63e/readme/theuseof.png" width="300" alt="Functions" align="middle">
+<img src="https://raw.githubusercontent.com/krlc/Constants/master/readme/theuseof.png" width="300" alt="Functions" align="middle">
 
 ## Contributing
 
