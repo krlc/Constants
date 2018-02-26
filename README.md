@@ -1,5 +1,3 @@
-<h1 align="center">Constants app</h1>
-
 <div align="center">
     <img src="https://cdn.rawgit.com/krlc/Constants/1e1fd5ef/readme/icon.svg" alt="Icon" width="400"/>
   <br>
