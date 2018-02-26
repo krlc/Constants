@@ -1,9 +1,7 @@
 <h1 align="center">Constants app</h1>
 
 <div align="center">
-  <a href="https://dribbble.com/shots/4263961-Front-End-Interview-Scroll">
-    <img src="https://cdn.rawgit.com/yangshun/front-end-interview-handbook/23d89c8/assets/scroll.svg" alt="Front End Interview Handbook" width="400"/>
-    </a>
+    <img src="https://cdn.rawgit.com/krlc/Constants/1e1fd5ef/readme/icon.svg" alt="Icon" width="400"/>
   <br>
 </div>
 
@@ -18,15 +16,15 @@ Firstly, you need to get HP Connectivity Kit. In the Calculators window find you
 
 Click on Toolbox menu button on the keyboard (the black one) and find User button
 
-<img src="https://raw.githubusercontent.com/krlc/Constants/master/functions.png" width="500" alt="Functions" align="middle">
+<img src="https://raw.githubusercontent.com/krlc/Constants/master/functions.png" width="300" alt="Functions" align="middle">
 
 After choose Constants
 
-<img src="https://raw.githubusercontent.com/krlc/Constants/master/constants.png" width="500" alt="Functions" align="middle">
+<img src="https://raw.githubusercontent.com/krlc/Constants/master/constants.png" width="300" alt="Functions" align="middle">
 
 After selecting the required constant, press Enter button on the keyboard. The variable will appear in the input field. For example you can multiply it by 1/2:
 
-<img src="https://raw.githubusercontent.com/krlc/Constants/master/theuseof.png" width="500" alt="Functions" align="middle">
+<img src="https://raw.githubusercontent.com/krlc/Constants/master/theuseof.png" width="300" alt="Functions" align="middle">
 
 ## Contributing
 
