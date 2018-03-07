@@ -15,7 +15,7 @@ Great! And it's also easy to have much risk of being mistaken, not to mention th
 ## How to install?
 Firstly, you need to get [HP Connectivity Kit](https://support.hp.com/us-en/drivers/selfservice/HP-Prime-Graphing-Calculator/5367459/model/5367460). In the _Calculators_ window find your calculator and open _Programs_ folder. After that just drag and drop the _Constants.hpprgm_ there and click _Save_ button in the menu.
 
-<img src="https://raw.githubusercontent.com/krlc/Constants/master/readme/menu.png" width="300" alt="Functions" align="middle">
+<img src="https://raw.githubusercontent.com/krlc/Constants/master/readme/connkit.png" width="300" alt="Functions" align="middle">
 
 ## How to use it?
 
