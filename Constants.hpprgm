@@ -1,220 +1,447 @@
-EXPORT V_light()
+// ----------------- LOCAL CONSTANTS -----------------
+
+L_V_light()
 BEGIN
-    RETURN EXPR("2.99792458E8");
+  RETURN 2.99792458E8;
 END;
 
-EXPORT Elementary_charge()
+L_Elementary_charge()
 BEGIN
-    RETURN EXPR("1.60217662090E−19");
+  RETURN 1.60217662090E−19;
+END;
+
+L_Avogadro()
+BEGIN
+  RETURN 6.02214075862E23;
+END;
+
+L_Gravitational()
+BEGIN
+  RETURN 6.67408E−11;
+END;
+
+L_Universal_Gas()
+BEGIN
+  RETURN 8.31445984848;
+END;
+
+L_Faraday()
+BEGIN
+  RETURN L_Elementary_charge * L_Avogadro;
+END;
+
+L_Planck()
+BEGIN
+  RETURN 6.62607004081E−34;
+END;
+
+L_PI()
+BEGIN
+  RETURN 3.14159265358979323846;
+END;
+
+L_Planck_Dirac()
+BEGIN
+  RETURN L_Planck / (2 * L_PI);
+END;
+
+L_Boltzmann()
+BEGIN
+  RETURN L_Universal_Gas / L_Avogadro;
+END;
+
+L_Stefan_Boltzmann()
+BEGIN
+  RETURN (L_PI^2 * L_Boltzmann^4) / (60 * L_Planck_Dirac^3 * L_V_light^2);
+END;
+
+L_Vac_permeability()
+BEGIN
+  RETURN 4 * L_PI * 10^-7;
+END;
+
+L_Vac_permittivity()
+BEGIN
+  RETURN 1 / (L_Vac_permeability * L_V_light^2);
+END;
+
+L_Coulomb()
+BEGIN
+  RETURN 1 / (4 * L_PI * L_Vac_permittivity);
+END;
+
+L_Electron_mass()
+BEGIN
+  RETURN 9.109383561E−31;
+END;
+
+L_Proton_mass()
+BEGIN
+  RETURN 1.672621898E−27;
+END;
+
+L_Neutron_mass()
+BEGIN
+  RETURN 1.674927471E−27;
+END;
+
+L_Muon_mass()
+BEGIN
+  RETURN 105.6583745E6;
+END;
+
+L_Tau_mass()
+BEGIN
+  RETURN 1776.82E6;
+END;
+
+L_Higgs_Bos_mass()
+BEGIN
+  RETURN 125.09E9;
+END;
+
+L_W_Bos_mass()
+BEGIN
+  RETURN 80.385E9;
+END;
+
+L_Z_Bos_mass()
+BEGIN
+  RETURN 91.1876E9;
+END;
+
+L_Rydberg()
+BEGIN
+  RETURN (L_Electron_mass * L_Elementary_charge^4) / (8 * L_Vac_permittivity^2 * L_Planck^3 * L_V_light);
+END;
+
+L_Rydberg_energy()
+BEGIN
+  RETURN 13.605693009848; // eV
+END;
+
+L_Fine_structure()
+BEGIN
+  RETURN (L_Elementary_charge^2) / (2 * L_Vac_permittivity * L_Planck * L_V_light);
+END;
+
+L_Bohr_radius()
+BEGIN
+  RETURN L_Planck_Dirac / (L_Electron_mass * L_V_light * L_Fine_structure);
+END;
+
+L_Bohr_magneton()
+BEGIN
+  RETURN (L_Elementary_charge * L_Planck_Dirac) / (2 * L_Electron_mass);
+END;
+
+L_Nuclear_magneton()
+BEGIN
+  RETURN (L_Elementary_charge * L_Planck_Dirac) / (2 * L_Proton_mass);
+END;
+
+L_Impedance_of_free_space()
+BEGIN
+  RETURN sqrt(L_Vac_permeability / L_Vac_permittivity);
+END;
+
+L_Planck_length()
+BEGIN
+  RETURN sqrt((L_Planck_Dirac * L_Gravitational) / L_V_light^3);
+END;
+
+L_Planck_mass()
+BEGIN
+  RETURN sqrt((L_Planck_Dirac * L_V_light) / L_Gravitational);
+END;
+
+L_Planck_time()
+BEGIN
+  RETURN sqrt((L_Planck_Dirac * L_Gravitational) / L_V_light^5);
+END;
+
+L_Planck_charge()
+BEGIN
+  RETURN sqrt(4 * L_PI * L_Vac_permittivity * L_Planck_Dirac * L_V_light);
+END;
+
+L_Planck_temp()
+BEGIN
+  RETURN sqrt((L_Planck_Dirac * L_V_light^5) / (L_Gravitational * L_Boltzmann^2));
+END;
+
+L_Golden_ratio()
+BEGIN
+  RETURN EXPR("((1+sqrt(5))/2)");
+END;
+
+L_Std_Atmo_Pressure()
+BEGIN
+  RETURN 1.01325E5;
+END;
+
+L_Atom_Mass_Unit()
+BEGIN
+  RETURN 1.66053904020E-27;
+END;
+
+L_eV_Energy() // eV
+BEGIN
+  RETURN 1.60217662090E−19; // J
+END;
+
+L_eV_Mass() // eV/c^2
+BEGIN
+  RETURN 1.782662E−36; // kg
+END;
+
+L_eV_Momentum() // eV/c
+BEGIN
+  RETURN 5.344286E−28; // kg⋅m/s
+END;
+
+L_eV_Temp() // eV/kB
+BEGIN
+  RETURN 1.160450520E4; // K
+END;
+
+L_eV_Time() // Planck_Dirac/eV
+BEGIN
+  RETURN 6.582119E−16; // s
+END;
+
+L_eV_Distance() // Planck_Dirac*c / eV
+BEGIN
+  RETURN 1.97327E−7; // m
+END;
+
+L_Light_year()
+BEGIN
+  RETURN 9.46073E15;
+END;
+
+L_Parsec()
+BEGIN
+  RETURN 3.08568E16;
+END;
+
+// ----------------- EXPORT SORTED ALPHA -----------------
+
+EXPORT Atom_Mass_Unit() BEGIN
+  RETURN L_Atom_Mass_Unit;
 END;
 
 EXPORT Avogadro()
 BEGIN
-    RETURN EXPR("6.02214075862E23");
-END;
-
-EXPORT Gravitational()
-BEGIN
-    RETURN EXPR("6.67408E−11");
-END;
-
-EXPORT Gas()
-BEGIN
-    RETURN EXPR("8.31445984848");
-END;
-
-EXPORT Faraday()
-BEGIN
-    RETURN Elementary_charge * Avogadro;
-END;
-
-EXPORT Planck()
-BEGIN
-    RETURN EXPR("6.62607004081E−34");
-END;
-
-EXPORT Planck_Dirac()
-BEGIN
-    RETURN Planck / (2 * PI);
-END;
-
-EXPORT Boltzmann()
-BEGIN
-    RETURN Gas / Avogadro;
-END;
-
-EXPORT Stefan_Boltzmann()
-BEGIN
-    RETURN (PI^2 * Boltzmann^4) / (60 * Planck_Dirac^3 * V_light^2);
-END;
-
-EXPORT Electron_mass()
-BEGIN
-    RETURN EXPR("9.109383561E−31");
-END;
-
-EXPORT Proton_mass()
-BEGIN
-    RETURN EXPR("1.672621898E−27");
-END;
-
-EXPORT Neutron_mass()
-BEGIN
-    RETURN EXPR("1.674927471E−27");
-END;
-
-EXPORT Muon_mass()
-BEGIN
-    RETURN EXPR("105.6583745E6");
-END;
-
-EXPORT Tau_mass()
-BEGIN
-    RETURN EXPR("1776.82E6");
-END;
-
-EXPORT Higgs_Bos_mass()
-BEGIN
-    RETURN EXPR("125.09E9");
-END;
-
-EXPORT W_Bos_mass()
-BEGIN
-    RETURN EXPR("80.385E9");
-END;
-
-EXPORT Z_Bos_mass()
-BEGIN
-    RETURN EXPR("91.1876E9");
-END;
-
-EXPORT Vac_permeability()
-BEGIN
-    RETURN 4 * PI * 10^-7;
-END;
-
-EXPORT Vac_permittivity()
-BEGIN
-    RETURN 1 / (Vac_permeability * V_light^2);
-END;
-
-EXPORT Rydberg()
-BEGIN
-    RETURN (Electron_mass * Elementary_charge^4) / (8 * Vac_permittivity^2 * Planck^3 * V_light);
-END;
-
-EXPORT Rydberg_energy()
-BEGIN
-    RETURN EXPR("13.605693009848"); // eV
-END;
-
-EXPORT Fine_structure()
-BEGIN
-    RETURN (Elementary_charge^2) / (2 * Vac_permittivity * Planck * V_light);
-END;
-
-EXPORT Bohr_radius()
-BEGIN
-    RETURN Planck_Dirac / (Electron_mass * V_light * Fine_structure);
+  RETURN L_Avogadro;
 END;
 
 EXPORT Bohr_magneton()
 BEGIN
-    RETURN (Elementary_charge * Planck_Dirac) / (2 * Electron_mass);
+  RETURN L_Bohr_magneton;
 END;
 
-EXPORT Nuclear_magneton()
+EXPORT Bohr_radius()
 BEGIN
-    RETURN (Elementary_charge * Planck_Dirac) / (2 * Proton_mass);
+  RETURN L_Bohr_radius;
 END;
 
-EXPORT Impedance_of_free_space()
+EXPORT Boltzmann()
 BEGIN
-    RETURN sqrt(Vac_permeability / Vac_permittivity);
+  RETURN L_Boltzmann;
 END;
 
 EXPORT Coulomb()
 BEGIN
-    RETURN 1 / (4 * PI * Vac_permittivity);
+  RETURN L_Coulomb;
 END;
 
-EXPORT Planck_length()
+EXPORT Electron_mass()
 BEGIN
-    RETURN sqrt((Planck_Dirac * Gravitational) / V_light^3);
+  RETURN L_Electron_mass;
 END;
 
-EXPORT Planck_mass()
+EXPORT Elementary_charge()
 BEGIN
-    RETURN sqrt((Planck_Dirac * V_light) / Gravitational);
+  RETURN L_Elementary_charge;
 END;
 
-EXPORT Planck_time()
+EXPORT eV_Energy()
 BEGIN
-    RETURN sqrt((Planck_Dirac * Gravitational) / V_light^5);
+  RETURN L_eV_Energy;
 END;
 
-EXPORT Planck_charge()
+EXPORT eV_Mass()
 BEGIN
-    RETURN sqrt(4 * PI * Vac_permittivity * Planck_Dirac * V_light);
+  RETURN L_eV_Mass;
 END;
 
-EXPORT Planck_temp()
+EXPORT eV_Momentum()
 BEGIN
-    RETURN sqrt((Planck_Dirac * V_light^5) / (Gravitational * Boltzmann^2));
+  RETURN L_eV_Momentum;
+END;
+
+EXPORT eV_Temp()
+BEGIN
+  RETURN L_eV_Temp;
+END;
+
+EXPORT eV_Time()
+BEGIN
+  RETURN L_eV_Time;
+END;
+
+EXPORT eV_Distance()
+BEGIN
+  RETURN L_eV_Distance;
+END;
+
+EXPORT Faraday()
+BEGIN
+  RETURN L_Faraday;
+END;
+
+EXPORT Fine_structure()
+BEGIN
+  RETURN L_Fine_structure;
 END;
 
 EXPORT Golden_ratio()
 BEGIN
-    RETURN EXPR("((1+sqrt(5))/2)");
+  RETURN L_Golden_ratio;
 END;
 
-EXPORT Std_Atmo_Pressure()
+EXPORT Gravitational()
 BEGIN
-    RETURN EXPR("1.01325E5");
+  RETURN L_Gravitational;
 END;
 
-EXPORT Atom_Mass_Unit()
+EXPORT Higgs_Bos_mass()
 BEGIN
-    RETURN EXPR("1.66053904020E-27");
+  RETURN L_Higgs_Bos_mass;
 END;
 
-EXPORT eV_Energy() // eV
+EXPORT Impedance_of_free_space()
 BEGIN
-    RETURN EXPR("1.60217662090E−19"); // J
-END;
-
-EXPORT eV_Mass() // eV/c^2
-BEGIN
-    RETURN EXPR("1.782662E−36"); // kg
-END;
-
-EXPORT eV_Momentum() // eV/c
-BEGIN
-    RETURN EXPR("5.344286E−28"); // kg⋅m/s
-END;
-
-EXPORT eV_Temp() // eV/kB
-BEGIN
-    RETURN EXPR("1.160450520E4"); // K
-END;
-
-EXPORT eV_Time() // Planck_Dirac/eV
-BEGIN
-    RETURN EXPR("6.582119E−16"); // s
-END;
-
-EXPORT eV_Distance() // Planck_Dirac*c / eV
-BEGIN
-    RETURN EXPR("1.97327E−7"); // m
+  RETURN L_Impedance_of_free_space;
 END;
 
 EXPORT Light_year()
 BEGIN
-    RETURN EXPR("9.46073E15");
+  RETURN L_Light_year;
+END;
+
+EXPORT Muon_mass()
+BEGIN
+  RETURN L_Muon_mass;
+END;
+
+EXPORT Neutron_mass()
+BEGIN
+  RETURN L_Neutron_mass;
+END;
+
+EXPORT Nuclear_magneton()
+BEGIN
+  RETURN L_Nuclear_magneton;
 END;
 
 EXPORT Parsec()
 BEGIN
-    RETURN EXPR("3.08568E16");
+  RETURN L_Parsec;
 END;
 
+EXPORT Planck()
+BEGIN
+  RETURN Planck;
+END;
+
+EXPORT Planck_Dirac()
+BEGIN
+  RETURN L_Planck_Dirac;
+END;
+
+EXPORT Planck_charge()
+BEGIN
+  RETURN L_Planck_charge;
+END;
+
+EXPORT Planck_length()
+BEGIN
+  RETURN L_Planck_length;
+END;
+
+EXPORT Planck_mass()
+BEGIN
+  RETURN L_Planck_mass;
+END;
+
+EXPORT Planck_temp()
+BEGIN
+  RETURN L_Planck_temp;
+END;
+
+EXPORT Planck_time()
+BEGIN
+  RETURN L_Planck_time;
+END;
+
+EXPORT Proton_mass()
+BEGIN
+  RETURN L_Proton_mass;
+END;
+
+EXPORT Rydberg()
+BEGIN
+  RETURN L_Rydberg;
+END;
+
+EXPORT Rydberg_energy()
+BEGIN
+  RETURN L_Rydberg_energy;
+END;
+
+EXPORT Std_Atmo_Pressure()
+BEGIN
+  RETURN L_Std_Atmo_Pressure;
+END;
+
+EXPORT Stefan_Boltzmann()
+BEGIN
+  RETURN L_Stefan_Boltzmann;
+END;
+
+EXPORT Tau_mass()
+BEGIN
+  RETURN L_Tau_mass;
+END;
+
+EXPORT Universal_Gas()
+BEGIN
+  RETURN L_Universal_Gas;
+END;
+
+EXPORT Vac_permeability()
+BEGIN
+  RETURN L_Vac_permeability;
+END;
+
+EXPORT Vac_permittivity()
+BEGIN
+  RETURN L_Vac_permittivity;
+END;
+
+EXPORT V_light()
+BEGIN
+  RETURN L_V_light;
+END;
+
+EXPORT W_Bos_mass()
+BEGIN
+  RETURN L_W_Bos_mass;
+END;
+
+EXPORT Z_Bos_mass()
+BEGIN
+  RETURN L_Z_Bos_mass;
+END;
