@@ -3,7 +3,7 @@
   <br>
 </div>
 
-## What is made for?
+## What is this made for?
 
 It is made to help keep all constants on hand when you need them. This app contains a bunch of physics (primary), chemistry and math constants, which you can use straight in your calculations.
 This app is supposed to be used with HP Prime calculator.
